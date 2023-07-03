@@ -35,8 +35,8 @@ if(isset($_POST["add"]))
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
 
-                echo "Id".$row['id'].'</br><input type="button" name="delete" value="Удалить" method="get">';
-                if(isset($_GET['delete'])){
+                echo "Id".$row['id'].'</br><input type="button" name="delete" value="Удалить" method="post">';
+                if(isset($_POST['delete'])){
                     $mysql->query("DELETE FROM `user` WHERE $row [`id`]");
                 }
                 echo "Name".$row['name'] . ".   .";
